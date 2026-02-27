@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Portfolio</title>
+<link rel="stylesheet" href="aboutme2.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+     
+</style>
+</head>
+<body>
+
+<header>
+    <div class="profile">
+        <img src="pedok.jpg" alt="">
+        <h1>Jem P. Milez</h1>
+        <p id="typing"></p>
+
+        
+        <div class="socials">
+            <a href="https://www.facebook.com/jem.milez.2024" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+        I am a programming student passionate about learning software development
+        and building modern applications with clean design and logic.
+    </p>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        
+    </div>
+</section>
+
+<section>
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>LOG IN FORM</h3>
+            <p>log in</p>
+        </div>     
+
+
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>Personal portfolio.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Jem P. Milez
+</footer>
+
+<script>
+    // Typing animation
+    const text = "Programming Student | Aspiring Developer";
+    let i = 0;
+
+    function typing() {
+        if (i < text.length) {
+            document.getElementById("typing").textContent += text.charAt(i);
+            i++;
+            setTimeout(typing, 80);
+        }
+    }
+    typing();
+
+    // Scroll animation
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+
+</script>
+
+</body>
+</html>
